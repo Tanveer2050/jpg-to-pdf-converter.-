@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional JPG to PDF Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-pdf"></i> JPG to PDF Converter</h1>
+            <p>Convert your JPG images to professional PDF documents</p>
+        </header>
+
+        <main>
+            <div class="converter-box">
+                <div class="upload-area" id="dropArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop JPG Images Here</h3>
+                    <p>or</p>
+                    <button id="selectFilesBtn" class="btn">Select Files</button>
+                    <input type="file" id="fileInput" accept="image/jpeg" multiple style="display: none;">
+                </div>
+
+                <div class="settings-panel">
+                    <div class="setting-group">
+                        <label for="pdfName">PDF File Name:</label>
+                        <input type="text" id="pdfName" placeholder="output.pdf">
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="pageSize">Page Size:</label>
+                        <select id="pageSize">
+                            <option value="a4">A4</option>
+                            <option value="letter">Letter</option>
+                            <option value="legal">Legal</option>
+                            <option value="match">Match Image Size</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="pageOrientation">Orientation:</label>
+                        <select id="pageOrientation">
+                            <option value="portrait">Portrait</option>
+                            <option value="landscape">Landscape</option>
+                            <option value="auto">Auto</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="margin">Margin (mm):</label>
+                        <input type="number" id="margin" value="10" min="0" max="50">
+                    </div>
+
+                    <div class="setting-group checkbox-group">
+                        <input type="checkbox" id="compressPdf" checked>
+                        <label for="compressPdf">Compress PDF</label>
+                    </div>
+                </div>
+
+                <div class="preview-section" id="previewSection">
+                    <h3>Selected Images (Preview)</h3>
+                    <div class="preview-container" id="previewContainer">
+                        <p class="empty-message">No images selected</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearBtn" class="btn btn-outline">Clear All</button>
+                    <button id="convertBtn" class="btn btn-primary" disabled>Convert to PDF</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Professional JPG to PDF Converter Tool &copy; <span id="currentYear"></span></p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
